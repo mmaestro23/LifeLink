@@ -14,5 +14,6 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: #e9f5f9;
+    font-family: Roboto, sans-serif;
 }
