@@ -17,3 +17,8 @@ body {
     background-color: #e9f5f9;
     font-family: Roboto, sans-serif;
 }
+
+.offset-sm-3.col-sm-3.d-grid button.btn-primary:hover {
+    background-color: #e9f5f9;
+    color: #007bff;
+}
