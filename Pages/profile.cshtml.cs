@@ -38,7 +38,7 @@ namespace LifeLink.Pages
             profileInfo.email = "";
             profileInfo.phone = "";
             profileInfo.address = "";
-            successMessage = "saved successfully";
+            successMessage = "Saved successfully";
 		}
     }
 }
