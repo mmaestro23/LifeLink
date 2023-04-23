@@ -15,44 +15,45 @@
 }
 
 <form method="post">
-
-	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Email</label>
-		<div class="col-sm-6">
-			<input type="text" class="form-control" name="email" value="@Model.userInfo.email">
-		</div>
-	</div>
-	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Password</label>
-		<div class="col-sm-6">
-			<input type="password" class="form-control" name="password" value="@Model.userInfo.password">
-		</div>
-	</div>
-
-
-	@if (Model.successMessage.Length > 0)
-	{
+	<div class="left-container-wrapper">
 		<div class="row mb-3">
-			<div class="col sm-9">
-				<div class="alert alert-success alert-dismissible fade show" role="alert">
-					<strong>@Model.successMessage</strong>
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
+			<label class="col-sm-3 col-form-label">Email</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" name="email" value="@Model.userInfo.email">
 			</div>
 		</div>
-	}
-
-	<div class="row mb-3">
-		<div class="offset-sm-3 col-sm-3 d-grid">
-			<button type="submit" class="btn btn-primary">Login</button>
+		<div class="row mb-3">
+			<label class="col-sm-3 col-form-label">Password</label>
+			<div class="col-sm-6">
+				<input type="password" class="form-control" name="password" value="@Model.userInfo.password">
+			</div>
 		</div>
-		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
-		</div>
-	</div>
 
-	<div class="alert alert-secondary" role="alert">
-		Don't have an account? <a href="/Register">Register here</a>
+
+		@if (Model.successMessage.Length > 0)
+		{
+			<div class="row mb-3">
+				<div class="col sm-9">
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<strong>@Model.successMessage</strong>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+				</div>
+			</div>
+		}
+
+		<div class="row mb-3">
+			<div class="offset-sm-3 col-sm-3 d-grid">
+				<button type="submit" class="btn btn-primary">Login</button>
+			</div>
+			<div class="col-sm-3 d-grid">
+				<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+			</div>
+		</div>
+
+		<div class="alert alert-secondary" role="alert">
+			Don't have an account? <a href="/Register">Register here</a>
+		</div>
 	</div>
 
 </form>

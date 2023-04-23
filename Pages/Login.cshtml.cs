@@ -11,6 +11,9 @@ namespace LifeLink.Pages
 		public UserInfo userInfo = new UserInfo();
 		public String errorMessage = "";
 		public String successMessage = "";
+		public static int userId { get; set; }
+
+
 		public void OnGet()
 		{
 		}
@@ -34,6 +37,7 @@ namespace LifeLink.Pages
 				{
 					connection.Open();
 					String sql = "SELECT COUNT(*) FROM UsersTable WHERE email = @email AND password = @password";
+					String sqlid = "SELECT id FROM UsersTable WHERE email = @email AND password = @password";
 					using (SqlCommand command = new SqlCommand(sql, connection))
 					{
 						command.Parameters.AddWithValue("@email", userInfo.email);
@@ -45,6 +49,28 @@ namespace LifeLink.Pages
 							errorMessage = "Invalid email or password.";
 							return;
 						}
+
+						using (SqlCommand idCommand = new SqlCommand(sqlid, connection))
+						{
+							idCommand.Parameters.AddWithValue("@email", userInfo.email);
+							idCommand.Parameters.AddWithValue("@password", userInfo.password);
+
+							using (SqlDataReader reader = idCommand.ExecuteReader())
+							{
+								if (reader.Read())
+								{
+									userInfo.id = reader.GetInt32(0).ToString();
+
+								}
+							}
+						}
+
+						
+							userInfo.email = "";
+							userInfo.password = "";
+							
+							successMessage = "Logged in Successfully";
+							Response.Redirect("/Index");
 					}
 				}
 			}
@@ -54,12 +80,8 @@ namespace LifeLink.Pages
 				return;
 			}
 
-			userInfo.email = "";
-			userInfo.password = "";
-
-			successMessage = "Logged in Successfully";
-
-			Response.Redirect("/Index");
+			
 		}
+
 	}
 }

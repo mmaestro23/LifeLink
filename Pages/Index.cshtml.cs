@@ -72,6 +72,8 @@ namespace LifeLink.Pages
 								profileInfo.email = reader.GetString(3);
 								profileInfo.phone = reader.GetString(4);
 								profileInfo.address = reader.GetString(5);
+								profileInfo.bloodGroup = reader.GetString(5);
+								profileInfo.RHfactor = reader.GetString(5);
 
 								listProfiles.Add(profileInfo);
 							}
@@ -103,6 +105,8 @@ namespace LifeLink.Pages
 			public String email;
 			public String phone;
 			public String address;
+			public String bloodGroup;
+			public String RHfactor;
 		}
 	}
 }

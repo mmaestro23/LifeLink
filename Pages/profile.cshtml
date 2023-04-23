@@ -3,74 +3,120 @@
 @{
 }
 
-@if (Model.errorMessage.Length > 0)
-{
-	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-		<strong>@Model.errorMessage</strong>
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
-}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Profile</title>
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+<body>
 
-<form method="post">
-	<h1>My Profile</h1>
-	<div>
-		<h2>Personal Info</h2>
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">First Name</label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" name="fname" value="@Model.profileInfo.firstName">
-			</div>
+	@if (Model.errorMessage.Length > 0)
+	{
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			<strong>@Model.errorMessage</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
+	}
 
+
+	@if (Model.successMessage.Length > 0)
+	{
 		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">last Name</label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" name="lname" value="@Model.profileInfo.lastName">
-			</div>
-		</div>
-		
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">email</label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" name="email" value="@Model.profileInfo.email">
-			</div>
-		</div>
-		
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">Phone</label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" name="phone" value="@Model.profileInfo.phone">
-			</div>
-		</div>
-		
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">Address</label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" name="address" value="@Model.profileInfo.address">
-			</div>
-		</div>
-		@if (Model.successMessage.Length > 0)
-		{
-			<div class="row mb-3">
-				<div class="col sm-9">
-					<div class="alert alert-success alert-dismissible fade show" role="alert">
-						<strong>@Model.successMessage</strong>
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					</div>
+			<div class="col sm-9">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<strong>@Model.successMessage</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 			</div>
-		}
-	</div>
+		</div>
+	}
 
-	<div>
-		<div class="row mb-3">
-			<div class="offset-sm-3 col-sm-3 d-grid">
-				<button type="submit" class="btn btn-primary">Register</button>
+	<form method="post">
+		<h1>My Profile</h1>
+		<div class="formbold-main-wrapper">
+		<div class="left-container-wrapper">
+			<h2>Personal Info</h2>
+			<div class="row mb-3">
+				<label class="col-sm-3 col-form-label">First Name</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="fname" value="@Model.profileInfo.firstName">
+				</div>
 			</div>
-			<div class="col-sm-3 d-grid">
-				<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+
+			<div class="row mb-3">
+				<label class="col-sm-3 col-form-label">last Name</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="lname" value="@Model.profileInfo.lastName">
+				</div>
+			</div>
+		
+			<div class="row mb-3">
+				<label class="col-sm-3 col-form-label">email</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="email" value="@Model.profileInfo.email">
+				</div>
+			</div>
+		
+			<div class="row mb-3">
+				<label class="col-sm-3 col-form-label">Phone</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="phone" value="@Model.profileInfo.phone">
+				</div>
+			</div>
+		
+			<div class="row mb-3">
+				<label class="col-sm-3 col-form-label">Address</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="address" value="@Model.profileInfo.address">
+				</div>
 			</div>
 		</div>
-	</div>
+		
+		<div id="right-container-wrapper">
+			 <h2>Medical Info</h2>
+		  <div class="row mb-3">
+			<label class="col-sm-3 col-form-label">Blood Group</label>
+			<div class="col-sm-6">
+				<select class="form-select" name="bloodgroup">
+					@foreach (var group in Model.bloodGroups)
+					{
+						<option value="@group">@group</option>
+					}
+				</select>
+			</div>
+		  </div>
 
-</form>
+		  <div class="row mb-3">
+			<label class="col-sm-3 col-form-label">RH Factor</label>
+			<div class="col-sm-6">
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input" type="checkbox" id="rhfactor-positive" name="rhfactor" value="positive" @(Model.profileInfo.RHfactor == "positive" ? "checked" : "")>
+				<label class="form-check-label" for="rhfactor-positive">Positive</label>
+			  </div>
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input" type="checkbox" id="rhfactor-negative" name="rhfactor" value="negative" @(Model.profileInfo.RHfactor == "negative" ? "checked" : "")>
+				<label class="form-check-label" for="rhfactor-negative">Negative</label>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+
+		<div class="left-container-wrapper">
+			<div class="row mb-3">
+				<div class="offset-sm-3 col-sm-3 d-grid">
+					<button type="submit" class="btn btn-primary">Save</button>
+				</div>
+				<div class="col-sm-3 d-grid">
+					<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	</form>
+
+</body>
+</html>
