@@ -28,12 +28,12 @@ namespace LifeLink.Pages
 
 			try
 			{
-				String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=lifeLink;Integrated Security=True";
+				String connectionString = "Data Source=DRKST-MTTR\\SQLEXPRESS;Initial Catalog=lifelink;Integrated Security=True";
 
 				using (SqlConnection connection = new SqlConnection(connectionString))
 				{
 					connection.Open();
-					String sql = "SELECT COUNT(*) FROM users WHERE email = @email AND password = @password";
+					String sql = "SELECT COUNT(*) FROM UsersTable WHERE email = @email AND password = @password";
 					using (SqlCommand command = new SqlCommand(sql, connection))
 					{
 						command.Parameters.AddWithValue("@email", userInfo.email);
