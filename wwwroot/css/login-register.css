@@ -1,0 +1,123 @@
+﻿/*  LOGIN  */
+
+body {
+    background: url(/images/yellowlady-log.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 80vh;
+}
+
+:root {
+    --main1: #ff6e01;
+    --main: #104606;
+    --bg: #f1e1d2;
+    --black: #000;
+    --white: #fff;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+#wrapper {
+    background-color: var(--white);
+    padding: 30px;
+    margin-top: 60px;
+    margin-left: 30px;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: var(--box-shadow);
+    width: 35%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-box {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    padding-top: -100px;
+}
+
+.input-box label {
+    width: 100px;
+    font-weight: bold;
+    padding: -500px;
+}
+
+.input-box .textarea {
+    margin-top: -20px;
+    margin-right: 5px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.input-box .textarea:focus {
+    outline: none;
+    border-color: var(--main);
+}
+
+.input-box .icon {
+    display: flex;
+    margin-right: 50%;
+    padding-right: 80px;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.remember-forgot input[type="checkbox"] {
+    font-size: 2.5rem;
+    margin-right: 5px;
+}
+
+.alinks {
+    color: var(--main);
+    text-decoration: none;
+    margin-top: -5px;
+}
+
+.alinks:hover {
+    color: var(--main1);
+    text-decoration: underline;
+}
+
+.btn {
+  display: inline-block; /* Display as inline-block */
+  background-color: var(--main);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.btn:hover {
+  background-color: var(--main1);
+  background: #ff9748;
+  z-index: -1;
+  transition: .3s linear;
+  left: 0;
+}
+
+/* Add some spacing between the buttons */
+.btn + .btn {
+  margin-left: 10px;
+}
+

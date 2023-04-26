@@ -1,59 +1,82 @@
 ﻿@page
 @model LifeLink.Pages.LoginModel
 @{
+	Layout = "~/Pages/Shared/_Layoutlogin.cshtml";
 }
 
-<br>
-<h2>Login</h2>
-
-@if (Model.errorMessage.Length > 0)
-{
-	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-		<strong>@Model.errorMessage</strong>
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
-}
-
-<form method="post">
-	<div class="left-container-wrapper">
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">Email</label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" name="email" value="@Model.userInfo.email">
-			</div>
-		</div>
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">Password</label>
-			<div class="col-sm-6">
-				<input type="password" class="form-control" name="password" value="@Model.userInfo.password">
-			</div>
-		</div>
 
 
-		@if (Model.successMessage.Length > 0)
-		{
-			<div class="row mb-3">
-				<div class="col sm-9">
-					<div class="alert alert-success alert-dismissible fade show" role="alert">
-						<strong>@Model.successMessage</strong>
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					</div>
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>LIfeLink | Welcome</title>
+	<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+	<link rel="stylesheet" href="/css/login-register.css" />
+
+</head>
+<body>
+
+	<div class="big-box">
+		<div id="wrapper">
+			<div class="form-box login">
+				<h1 id="login">Login here</h1>
+				@if (Model.errorMessage.Length > 0)
+				{
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong>@Model.errorMessage</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
-			</div>
-		}
+				}
 
-		<div class="row mb-3">
-			<div class="offset-sm-3 col-sm-3 d-grid">
-				<button type="submit" class="btn btn-primary">Login</button>
-			</div>
-			<div class="col-sm-3 d-grid">
-				<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
-			</div>
-		</div>
+				<form method="post">
 
-		<div class="alert alert-secondary" role="alert">
-			Don't have an account? <a href="/Register">Register here</a>
+					<div class="input-box">
+                        <label id="usernameLbl">Email:</label><br/>
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+						<input type="text" class="textarea" name="email" value="@Model.userInfo.email">
+                        <small id="error-message"></small>
+                    </div>
+
+					<div class="input-box">
+						<label>Password:</label><br />
+						<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+						<input type="password" class="textarea" name="password" value="@Model.userInfo.password">
+					</div>
+
+					<div class="remember-forgot">
+						<label><input type="checkbox" class="check-box"/>Remember me</label>
+						<a href="#" class="alinks">Forgot Password</a>
+					</div>
+
+					@if (Model.successMessage.Length > 0)
+					{
+						<div class="row mb-3">
+							<div class="col sm-9">
+								<div class="alert alert-success alert-dismissible fade show" role="alert">
+									<strong>@Model.successMessage</strong>
+									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+							</div>
+						</div>
+					}
+
+					<div>
+						<button type="submit" class="btn btn-primary">Login</button>
+						<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+					</div>
+
+
+					<div class="login-register" role="alert">
+						Don't have an account? <a href="/Register" class="alinks" >Register</a>
+					</div>
+
+				</form>
+
+			</div>
 		</div>
 	</div>
 
-</form>
+</body>
+</html>

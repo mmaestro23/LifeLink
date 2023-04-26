@@ -2,38 +2,100 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+	Layout = "~/Pages/Shared/_Layoutlogin.cshtml";
 }
 
-<br>
-<h2>List of users</h2>
-<table class="table">
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Email</th>
-			<th>Phone</th>
-			<th>Address</th>
-			<th>Password</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model.listClients)
-		{
-			<tr>
-				<td>@item.id</td>
-				<td>@item.firstName</td>
-				<td>@item.lastName</td>
-				<td>@item.email</td>
-				<td>@item.phone</td>
-				<td>@item.address</td>
-				<td>@item.password</td>
-				<td>
-					<a class="btn btn-primary btn-sm" href="/Clients/Update?id=@item.id">Receive</a>
-					<a class="btn btn-danger btn-sm" href="/Clients/Delete?id=@item.id">Donate</a>
-				</td>
-			</tr>
-		}
-	</tbody>
-</table>
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIfeLink | Welcome</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="/css/homestyle.css" />
+
+</head>
+<body>
+    <!--  HEADER  -->
+    <header class="header">
+        <a href="#" class="logo"> <i class="fas fa-paw"> <ion-icon name="paw"></ion-icon>LifeLink </i> </a>
+
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <span id="login-btn" class="fas fa-user"><ion-icon name="log-in"></ion-icon><a href="login.html"></a></span>
+            <span id="menu-btn" class="fas fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
+        </div>
+    </header>
+
+    <!--  HOME  -->
+    <div class="home" id="home">
+
+        <div class="content">
+            <h3>
+                Be the reason </br> for someone's. <br>
+                heartbeat
+            </h3>
+            <a class="btn" asp-area="" asp-page="/Login">Sign-in</a>
+        </div>
+
+        <img src="images/bottom_wave.png" alt="" class="wave">
+
+    </div>
+
+    <!--  FOOTER  -->
+    <div>
+        <footer class="border-top footer text-muted ">
+            <div class="box-container">
+
+                <div class="box">
+                    <h3><i class="fas fa-paw"></i> zoo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="links"><i class="fas fa-clock"></i>monday - friday</p>
+                    <p class="days">7:00AM - 11:00PM</p>
+                </div>
+
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <a href="#" class="links"><i class="fas fa-phone"></i> 1245-147-2589</a>
+                    <a href="#" class="links"><i class="fas fa-phone"></i> 1245-147-2589</a>
+                    <a href="#" class="links"><i class="fas fa-envelope"></i> info@zoolife.com</a>
+                    <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> karachi, pakistan</a>
+                </div>
+
+                <!--<div class="box">
+                    <h3>quick links</h3>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i>home</a>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i>about</a>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i>gallery</a>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i>animal</a>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i>pricing</a>
+                </div>-->
+
+                <div class="box">
+                    <h3>newsletter</h3>
+                    <p>subscribe for latest updates</p>
+                    <input type="email" placeholder="Your Email" class="email">
+                    <a href="#" class="btn">subscribe</a>
+                    <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="credit">&copy; 2023 shelterlife. All rights reserved by <a href="#" class="link">drkst_mttr</a></div>
+
+
+        </footer>
+    </div>
+
+</body>
+</html>
