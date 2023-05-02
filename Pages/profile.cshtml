@@ -1,16 +1,82 @@
 ﻿@page
 @model LifeLink.Pages.profileModel
 @{
+	Layout = "~/Pages/Shared/_Layoutlogin.cshtml";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
+
+	<script src="https://kit.fontawesome.com/ccbd4d6bc1.js" crossorigin="anonymous"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+
 	<title>My Profile</title>
-	<link rel="stylesheet" type="text/css" href="/css/site.css">
+
+	<link rel="stylesheet" type="text/css" href="/css/profile.css">
+	<link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
+	<div class="overall">
+	<nav>
+		<div class="container">
+			<div>
+				<img src="./images/logo.png" alt="logo" class="logo" />
+				<div class="menu">
+					<ul>
+						<li>
+							<a asp-area="" asp-page="/Index">Home</a>
+						</li>
+						<li>
+								<a asp-area="" asp-page="/About">About</a>
+						</li>
+						<li>
+								<a asp-area="" asp-page="/Search">Browse</a>
+						</li>
+						<li>
+								<a asp-area="" asp-page="/About">Contact</a>
+						</li>
+					</ul>
+					<ul class="social-media">
+						<li>
+							<a href="#" class="media-icon">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="media-icon">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="media-icon">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="media-icon">
+								<i class="fab fa-pinterest"></i>
+							</a>
+						</li>
+						<li>
+							<a class="btn" asp-area="" asp-page="/Login">
+								<i class="fa-solid fa-user"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="menu-btn">
+				<a class="btn" asp-area="" asp-page="/Login">
+					<i class="fa-solid fa-user"></i>
+				</a>
+			</div>
+		</div>
+	</nav>
 
 	@if (Model.errorMessage.Length > 0)
 	{
@@ -34,89 +100,122 @@
 	}
 
 	<form method="post">
-		<h1>My Profile</h1>
-		<div class="formbold-main-wrapper">
-		<div class="left-container-wrapper">
-			<h2>Personal Info</h2>
-			<div class="row mb-3">
-				<label class="col-sm-3 col-form-label">First Name</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="fname" value="@Model.profileInfo.firstName">
+		<div class="major-conatiner">
+			<h1>My Profile</h1>
+			<div class="formbold-main-wrapper">
+			<div class="left-container-wrapper">
+				<h2>Personal Info</h2>
+				<div class="row">
+					<label class="label">First Name</label>
+					<div>
+						<input type="text" class="textarea" name="fname" value="@Model.profileInfo.firstName">
+					</div>
 				</div>
-			</div>
 
-			<div class="row mb-3">
-				<label class="col-sm-3 col-form-label">last Name</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="lname" value="@Model.profileInfo.lastName">
+				<div class="row">
+					<label class="label">last Name</label>
+					<div>
+						<input type="text" class="textarea" name="lname" value="@Model.profileInfo.lastName">
+					</div>
+				</div>
+		
+				<div class="row">
+					<label class="label">email</label>
+					<div>
+						<input type="text" class="textarea" name="email" value="@Model.profileInfo.email">
+					</div>
+				</div>
+		
+				<div class="row">
+					<label class="label">Phone</label>
+					<div>
+						<input type="text" class="textarea" name="phone" value="@Model.profileInfo.phone">
+					</div>
+				</div>
+		
+				<div class="row">
+					<label class="label">Address</label>
+					<div>
+						<input type="text" class="textarea" name="address" value="@Model.profileInfo.address">
+					</div>
 				</div>
 			</div>
 		
-			<div class="row mb-3">
-				<label class="col-sm-3 col-form-label">email</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="email" value="@Model.profileInfo.email">
+			<div id="right-container-wrapper">
+				 <h2>Medical Info</h2>
+			  <div class="row">
+				<label class="label">Blood Group</label>
+				<div>
+					<select class="textarea" name="bloodgroup">
+						@foreach (var group in Model.bloodGroups)
+						{
+							<option value="@group">@group</option>
+						}
+					</select>
 				</div>
-			</div>
-		
-			<div class="row mb-3">
-				<label class="col-sm-3 col-form-label">Phone</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="phone" value="@Model.profileInfo.phone">
-				</div>
-			</div>
-		
-			<div class="row mb-3">
-				<label class="col-sm-3 col-form-label">Address</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="address" value="@Model.profileInfo.address">
-				</div>
-			</div>
-		</div>
-		
-		<div id="right-container-wrapper">
-			 <h2>Medical Info</h2>
-		  <div class="row mb-3">
-			<label class="col-sm-3 col-form-label">Blood Group</label>
-			<div class="col-sm-6">
-				<select class="form-select" name="bloodgroup">
-					@foreach (var group in Model.bloodGroups)
-					{
-						<option value="@group">@group</option>
-					}
-				</select>
-			</div>
-		  </div>
-
-		  <div class="row mb-3">
-			<label class="col-sm-3 col-form-label">RH Factor</label>
-			<div class="col-sm-6">
-			  <div class="form-check form-check-inline">
-				<input class="form-check-input" type="checkbox" id="rhfactor-positive" name="rhfactor" value="positive" @(Model.profileInfo.RHfactor == "positive" ? "checked" : "")>
-				<label class="form-check-label" for="rhfactor-positive">Positive</label>
 			  </div>
-			  <div class="form-check form-check-inline">
-				<input class="form-check-input" type="checkbox" id="rhfactor-negative" name="rhfactor" value="negative" @(Model.profileInfo.RHfactor == "negative" ? "checked" : "")>
-				<label class="form-check-label" for="rhfactor-negative">Negative</label>
+
+			  <div class="row">
+				<label class="label">RH Factor</label>
+				<div>
+				  <div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="rhfactor-positive" name="rhfactor" value="positive" @(Model.profileInfo.RHfactor == "positive" ? "checked" : "")>
+					<label class="form-check-label" for="rhfactor-positive">Positive</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="rhfactor-negative" name="rhfactor" value="negative" @(Model.profileInfo.RHfactor == "negative" ? "checked" : "")>
+					<label class="form-check-label" for="rhfactor-negative">Negative</label>
+				  </div>
+				</div>
 			  </div>
 			</div>
-		  </div>
-		</div>
 
 
-		<div class="left-container-wrapper">
-			<div class="row mb-3">
-				<div class="offset-sm-3 col-sm-3 d-grid">
-					<button type="submit" class="btn btn-primary">Save</button>
-				</div>
-				<div class="col-sm-3 d-grid">
-					<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+			<div class="left-container-wrapper">
+				<div class="row mb-3">
+					<div class="offset-sm-3 col-sm-3 d-grid">
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+					<div class="col-sm-3 d-grid">
+						<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+					</div>
 				</div>
 			</div>
-		</div>
+			</div>
 		</div>
 
 	</form>
+	</div>
 
+	<!--	FOOTER	-->
+
+	<footer>
+		<div class="footer-top">
+			<img src="./images/logo.png" alt="logo" class="logo" />
+		</div>
+		<div class="footer-bottom">
+			<div>
+				<ul>
+					<li>
+						<a asp-area="" asp-page="/Index">Home</a>
+					</li>
+					<li>
+						<a asp-area="" asp-page="/About">About</a>
+					</li>
+					<li>
+						<a asp-area="" asp-page="/Search">Browse</a>
+					</li>
+					<li>
+						<a asp-area="" asp-page="/Index">Contact</a>
+					</li>
+				</ul>
+				<p>
+					drkst-mttr
+					<span class="year"></span>
+					All Rights Reserved
+				</p>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

@@ -10,6 +10,8 @@ namespace LifeLink.Pages
 		public List<ProfileInfo> listProfiles = new List<ProfileInfo>();
 		private readonly ILogger<IndexModel> _logger;
 
+		public String id;
+
 		public IndexModel(ILogger<IndexModel> logger)
 		{
 			_logger = logger;

@@ -19,7 +19,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="./css/style.css" />
 
-		<title>LIFELINK</title>
+		<title>LIFELINK | Welcome</title>
 
 	</head>
 	<body>
@@ -32,16 +32,16 @@
 						<div class="menu">
 							<ul>
 								<li>
-									<a href="#">Home</a>
+									<a asp-area="" asp-page="/Index">Home</a>
 								</li>
 								<li>
-									<a href="#">About</a>
+									<a asp-area="" asp-page="/About">About</a>
 								</li>
 								<li>
-									<a href="#">Projects</a>
+								<a asp-area="" asp-page="/Search">Browser</a>
 								</li>
 								<li>
-									<a href="#">Contact</a>
+									<a asp-area="" asp-page="/Index">Contact</a>
 								</li>
 							</ul>
 							<ul class="social-media">
@@ -65,11 +65,18 @@
 										<i class="fab fa-pinterest"></i>
 									</a>
 								</li>
+								<li>
+								<a asp-area="" asp-page="/Login">
+									<i class="fa-solid fa-user"></i>
+								</a>
+								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="menu-btn">
-						<i class="fas fa-bars"></i>
+					<a class="btn" asp-area="" asp-page="/Login">
+						<i class="fa-solid fa-user"></i>
+					</a>
 					</div>
 				</div>
 			</nav>
@@ -78,7 +85,7 @@
 			<div class="content">
 				<div>
 					<small>drkst-mttr</small>
-					<h1>Digital Designer.</h1>
+					<h1>Digital Designer. @Model.id</h1>
 					<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 					Sed ut purus in neque hendrerit pretium. Nunc iaculis, 
@@ -86,7 +93,7 @@
 					nec euismod sapien purus vel nulla. 
 					Pellentesque eu ipsum eget odio consectetur venenatis vitae vel quam.
 					</p>
-					<a class="btn" asp-area="" asp-page="/Login">Learn more</a>
+					<a asp-area="" asp-page="/Login">Learn more</a>
 				</div>
 			</div>
 		</header>
@@ -129,16 +136,16 @@
 				<div>
 					<ul>
 						<li>
-							<a href="#">Home</a>
+							<a asp-area="" asp-page="/Index">Home</a>
 						</li>
 						<li>
-							<a href="#">About</a>
+							<a asp-area="" asp-page="/About">About</a>
 						</li>
 						<li>
-							<a href="#">Projects</a>
+						<a asp-area="" asp-page="/Search">Browse</a>
 						</li>
 						<li>
-							<a href="#">Contact</a>
+							<a asp-area="" asp-page="/Index">Contact</a>
 						</li>
 					</ul>
 					<p>drkst-mttr

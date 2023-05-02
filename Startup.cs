@@ -29,7 +29,7 @@ namespace LifeLink
 
 			app.UseRouting();
 
-			app.UseSession(); // Add this line to use session
+			app.UseSession();
 
 			app.UseEndpoints(endpoints =>
 			{

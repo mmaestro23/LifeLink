@@ -220,6 +220,28 @@ footer ul li:nth-child(1){
     margin-left: 0;
 }
 
+.about{
+    margin-top: 100px;
+
+}
+
+.about h1{
+    margin-left: 40px;
+}
+
+.about h4{
+    margin-left: 60px;
+}
+
+.about p{
+    margin-left: 80px;
+    color: black;
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 /*@media screen and (max-width: 1000px){
     nav .container{
         display: flex;

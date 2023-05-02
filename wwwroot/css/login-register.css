@@ -1,9 +1,9 @@
 ﻿/*  LOGIN  */
 
 body {
-    background: url(/images/yellowlady-log.jpg) no-repeat center center;
+    /*background: url(/images/yellowlady-log.jpg) no-repeat center center;
     background-size: cover;
-    min-height: 80vh;
+    min-height: 80vh;*/
 }
 
 :root {
@@ -15,7 +15,14 @@ body {
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-#wrapper {
+.big-box{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/*#wrapper {
     background-color: var(--white);
     padding: 30px;
     margin-top: 60px;
@@ -95,7 +102,7 @@ h1 {
 }
 
 .btn {
-  display: inline-block; /* Display as inline-block */
+  display: inline-block;
   background-color: var(--main);
   color: #fff;
   padding: 10px 20px;
@@ -115,9 +122,10 @@ h1 {
   transition: .3s linear;
   left: 0;
 }
-
+*/
 /* Add some spacing between the buttons */
-.btn + .btn {
-  margin-left: 10px;
+/*.btn + .btn {
+    margin-left: 10px;
 }
+*/
 

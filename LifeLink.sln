@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LifeLink", "LifeLink.csproj", "{D438DA31-A0B0-4943-9BF3-468E675E8DCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLink.Models", "..\LifeLink.Models\LifeLink.Models.csproj", "{1FC46BDA-AB01-403B-85B8-85140D6554A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLink.Services", "..\LifeLink.Services\LifeLink.Services.csproj", "{042775C2-1F9F-4046-AD02-BE9A269095CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D438DA31-A0B0-4943-9BF3-468E675E8DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D438DA31-A0B0-4943-9BF3-468E675E8DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D438DA31-A0B0-4943-9BF3-468E675E8DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC46BDA-AB01-403B-85B8-85140D6554A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC46BDA-AB01-403B-85B8-85140D6554A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC46BDA-AB01-403B-85B8-85140D6554A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC46BDA-AB01-403B-85B8-85140D6554A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042775C2-1F9F-4046-AD02-BE9A269095CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042775C2-1F9F-4046-AD02-BE9A269095CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042775C2-1F9F-4046-AD02-BE9A269095CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042775C2-1F9F-4046-AD02-BE9A269095CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
