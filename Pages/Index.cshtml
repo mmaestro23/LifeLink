@@ -2,38 +2,160 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+	Layout = "~/Pages/Shared/_Layoutlogin.cshtml";
 }
 
-<br>
-<h2>List of users</h2>
-<table class="table">
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Email</th>
-			<th>Phone</th>
-			<th>Address</th>
-			<th>Password</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model.listClients)
-		{
-			<tr>
-				<td>@item.id</td>
-				<td>@item.firstName</td>
-				<td>@item.lastName</td>
-				<td>@item.email</td>
-				<td>@item.phone</td>
-				<td>@item.address</td>
-				<td>@item.password</td>
-				<td>
-					<a class="btn btn-primary btn-sm" href="/Clients/Update?id=@item.id">Receive</a>
-					<a class="btn btn-danger btn-sm" href="/Clients/Delete?id=@item.id">Donate</a>
-				</td>
-			</tr>
-		}
-	</tbody>
-</table>
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width-device-width, initial-scale=1.0"/>
+
+		<script src="https://kit.fontawesome.com/ccbd4d6bc1.js" crossorigin="anonymous"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<title>LIFELINK | Welcome</title>
+
+	</head>
+	<body>
+
+		<header>
+			<nav>
+				<div class="container">
+					<div>
+						<img src="./images/logo.png" alt="logo" class="logo" />
+						<div class="menu">
+							<ul>
+								<li>
+									<a asp-area="" asp-page="/Index">Home</a>
+								</li>
+								<li>
+									<a asp-area="" asp-page="/About">About</a>
+								</li>
+								<li>
+								<a asp-area="" asp-page="/Search">Browser</a>
+								</li>
+								<li>
+									<a asp-area="" asp-page="/Index">Contact</a>
+								</li>
+							</ul>
+							<ul class="social-media">
+								<li>
+									<a href="#" class="media-icon">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="media-icon">
+										<i class="fab fa-instagram"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="media-icon">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="media-icon">
+										<i class="fab fa-pinterest"></i>
+									</a>
+								</li>
+								<li>
+								<a asp-area="" asp-page="/Login">
+									<i class="fa-solid fa-user"></i>
+								</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="menu-btn">
+					<a class="btn" asp-area="" asp-page="/Login">
+						<i class="fa-solid fa-user"></i>
+					</a>
+					</div>
+				</div>
+			</nav>
+
+
+			<div class="content">
+				<div>
+					<small>drkst-mttr</small>
+					<h1>Digital Designer. @Model.id</h1>
+					<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Sed ut purus in neque hendrerit pretium. Nunc iaculis, 
+					lorem eu lacinia pulvinar, erat elit efficitur elit, 
+					nec euismod sapien purus vel nulla. 
+					Pellentesque eu ipsum eget odio consectetur venenatis vitae vel quam.
+					</p>
+					<a asp-area="" asp-page="/Login">Learn more</a>
+				</div>
+			</div>
+		</header>
+
+		<section class="projects">
+			<div class="overlay">
+				<div>
+					<h1>Our Projects.</h1>
+					<a href="#">Explore</a>
+				</div>
+			</div>
+			<img src="./images/cat.jpg" alt="project"/>
+			<img src="./images/cat.jpg" alt="project"/>
+			<img src="./images/cat.jpg" alt="project"/>
+		</section>
+
+		<section class="posts">
+			<div class="row">
+			<img src="./images/yellow.jpg" alt="post" />
+			<div>
+				<small>drkst-mttr</small>
+				<h1>Digital Designer.</h1>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Sed ut purus in neque hendrerit pretium. Nunc iaculis, 
+				lorem eu lacinia pulvinar, erat elit efficitur elit, 
+				nec euismod sapien purus vel nulla. 
+				Pellentesque eu ipsum eget odio consectetur venenatis vitae vel quam.
+				</p>
+				<a href="#">About</a>
+			</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="footer-top">
+				<img src="./images/logo.png" alt="logo" class="logo"/>
+			</div>
+			<div class="footer-bottom">
+				<div>
+					<ul>
+						<li>
+							<a asp-area="" asp-page="/Index">Home</a>
+						</li>
+						<li>
+							<a asp-area="" asp-page="/About">About</a>
+						</li>
+						<li>
+						<a asp-area="" asp-page="/Search">Browse</a>
+						</li>
+						<li>
+							<a asp-area="" asp-page="/Index">Contact</a>
+						</li>
+					</ul>
+					<p>drkst-mttr
+						<span class="year"></span>
+						All Rights Reserved
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="main.js"></script>
+	</body>
+</html>

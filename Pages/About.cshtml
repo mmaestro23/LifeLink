@@ -1,0 +1,143 @@
+﻿@page
+@model LifeLink.Pages.AboutModel
+@{
+	Layout = "~/Pages/Shared/_Layoutlogin.cshtml";
+}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width-device-width, initial-scale=1.0" />
+
+	<script src="https://kit.fontawesome.com/ccbd4d6bc1.js" crossorigin="anonymous"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="./css/style.css" />
+
+	<title>LIFELINK | Welcome</title>
+
+</head>
+<body>
+
+	<header>
+		<nav>
+			<div class="container">
+				<div>
+					<img src="./images/logo.png" alt="logo" class="logo" />
+					<div class="menu">
+						<ul>
+							<li>
+								<a asp-area="" asp-page="/Index">Home</a>
+							</li>
+							<li>
+								<a asp-area="" asp-page="/About">About</a>
+							</li>
+							<li>
+								<a asp-area="" asp-page="/Search">Browse</a>
+							</li>
+							<li>
+								<a asp-area="" asp-page="/Index">Contact</a>
+							</li>
+						</ul>
+						<ul class="social-media">
+							<li>
+								<a href="#" class="media-icon">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="media-icon">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="media-icon">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="media-icon">
+									<i class="fab fa-pinterest"></i>
+								</a>
+							</li>
+							<li>
+								<a asp-area="" asp-page="/Login">
+									<i class="fa-solid fa-user"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="menu-btn">
+					<a class="btn" asp-area="" asp-page="/Login">
+						<i class="fa-solid fa-user"></i>
+					</a>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="about">
+			<h1>LIFE LINK Project.</h1>
+
+			<h4>Blood donation pictogram</h4>
+			<p>
+				Blood donation center at the University Hospital of Basel, Switzerland.
+				From left to right: Two cell separators for apheresis, secluded office
+				for pre-donation blood pressure measurement and blood count, and on the right,
+				chairs for whole blood donations.
+				A blood donation occurs when a person voluntarily has blood drawn and used
+				for transfusions and/or made into biopharmaceutical medications by a process called fractionation
+				(separation of whole-blood components). Donation may be of whole blood (WB),
+				or of specific components directly (the latter called apheresis).
+				Blood banks often participate in the collection process as well as the procedures that follow it.
+			</p>
+			
+			<h4>Organ donation pictogram</h4>
+
+			<p>
+				Today in the developed world, most blood donors are unpaid volunteers who donate blood for a community supply.
+				In some countries, established supplies are limited and donors usually give blood when family or friends
+				need a transfusion (directed donation). Many donors donate as an act of charity, but in countries
+				that allow paid donation some donors are paid, and in some cases there are incentives other
+				than money such as paid time off from work. Donors can also have blood drawn for their own future use
+				(autologous donation).
+				Donating is relatively safe, but some donors have bruising where the needle is inserted or may feel faint.
+			</p>
+		</div>
+	</header>
+
+	<footer>
+		<div class="footer-top">
+			<img src="./images/logo.png" alt="logo" class="logo" />
+		</div>
+		<div class="footer-bottom">
+			<div>
+				<ul>
+					<li>
+						<a asp-area="" asp-page="/Index">Home</a>
+					</li>
+					<li>
+						<a asp-area="" asp-page="/About">About</a>
+					</li>
+					<li>
+						<a asp-area="" asp-page="/Search">Browse</a>
+					</li>
+					<li>
+						<a asp-area="" asp-page="/Index">Contact</a>
+					</li>
+				</ul>
+				<p>
+					drkst-mttr
+					<span class="year"></span>
+					All Rights Reserved
+				</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

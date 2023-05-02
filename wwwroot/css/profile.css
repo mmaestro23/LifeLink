@@ -1,0 +1,123 @@
+:root {
+    --main1: #ff6e01;
+    --main: #104606;
+    --bg: #f1e1d2;
+    --black: #000;
+    --white: #fff;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+}
+
+.overall {
+    background: radial-gradient(#ffffff, #dfdfdf);
+    width: 205vh;
+}
+
+.major-conatiner h1 {
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.major-conatiner > div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.formbold-main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.left-container-wrapper {
+  flex-basis: 48%;
+  margin-bottom: 20px;
+}
+
+#right-container-wrapper {
+  flex-basis: 48%;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom:2px;
+}
+
+/* Form Styles */
+.label {
+  font-weight: bold;
+  flex-basis: 60%;
+  width: 50px;
+}
+
+.textarea {
+  flex-basis: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-check-input {
+  margin-right: 5px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+
